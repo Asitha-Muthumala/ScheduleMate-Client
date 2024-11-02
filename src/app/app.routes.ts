@@ -13,11 +13,11 @@ import { NotAuthorizedComponent } from './page/common/not-authorized/not-authori
 
 export const routes: Routes = [
     { path: 'businessLanding', component: BusinessLandingComponent, canActivate: [AuthGuard], data: { roles: ["BUSINESS"] } },
-    { path: 'businessPackage', component: BusinessPackageComponent },
-    { path: 'businessTour', component: BusinessTourComponent },
-    { path: 'businessService', component: BusinessServiceComponent },
-    { path: 'clientLanding', component: ClientLandingComponent },
-    { path: 'serviceView', component: ServiceViewComponent },
+    { path: 'businessPackage', component: BusinessPackageComponent, canActivate: [AuthGuard], data: { roles: ["BUSINESS"] } },
+    { path: 'businessTour', component: BusinessTourComponent, canActivate: [AuthGuard], data: { roles: ["BUSINESS"] } },
+    { path: 'businessService', component: BusinessServiceComponent, canActivate: [AuthGuard], data: { roles: ["BUSINESS"] } },
+    { path: 'clientLanding', component: ClientLandingComponent, canActivate: [AuthGuard], data: { roles: ["CLIENT"] } },
+    { path: 'serviceView', component: ServiceViewComponent, canActivate: [AuthGuard], data: { roles: ["CLIENT"] } },
     { path: 'clientHome', component: LandingComponent, canActivate: [AuthGuard], data: { roles: ["CLIENT"] } },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
