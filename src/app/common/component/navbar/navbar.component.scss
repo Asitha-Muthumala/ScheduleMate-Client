@@ -3,12 +3,25 @@
     border-bottom: 2px solid rgb(231, 231, 231);
 }
 
+.navbar-nav {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+}
+
 .login-btn {
     background-color: rgb(100, 230, 82);
     color: #fff;
     font-weight: 500;
+
     i {
         font-size: 1.1em;
     }
+
     border-radius: 20px;
 }
