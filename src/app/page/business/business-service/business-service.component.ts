@@ -97,8 +97,7 @@ export class BusinessServiceComponent {
   startingTime = { hour: 9, minute: 0 };
   endingTime = { hour: 17, minute: 0 };
   imageURL: string =
-    'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg';
-
+    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/73/f7/09/caption.jpg?w=500&h=400&s=1';
   monday: boolean = false;
   tuesday: boolean = false;
   wednesday: boolean = false;
@@ -108,7 +107,9 @@ export class BusinessServiceComponent {
   sunday: boolean = false;
 
   comboPackSelected: boolean = false;
-  budgetPackSelected: boolean = false;
+  familyPackSelected: boolean = false;
+  couplePackSelected: boolean = false;
+  wfamilyPackSelected: boolean = false;
 
   availabilityArray: any[] = [];
   packageListArray: any[] = [];
@@ -165,11 +166,29 @@ export class BusinessServiceComponent {
       );
     }
 
-    if (this.budgetPackSelected) {
+    if (this.familyPackSelected) {
       this.packageListArray.push(
         (this.onePackage = {
           packageId: 2,
           PackageName: 'budget',
+        })
+      );
+    }
+
+    if (this.couplePackSelected) {
+      this.packageListArray.push(
+        (this.onePackage = {
+          packageId: 3,
+          PackageName: 'couple',
+        })
+      );
+    }
+
+    if (this.wfamilyPackSelected) {
+      this.packageListArray.push(
+        (this.onePackage = {
+          packageId: 4,
+          PackageName: 'w family',
         })
       );
     }
@@ -262,7 +281,9 @@ export class BusinessServiceComponent {
     this.sunday = false;
 
     this.comboPackSelected = false;
-    this.budgetPackSelected = false;
+    this.familyPackSelected = false;
+    this.couplePackSelected = false;
+    this.wfamilyPackSelected = false;
 
     this.availabilityArray = [];
     this.packageListArray = [];
