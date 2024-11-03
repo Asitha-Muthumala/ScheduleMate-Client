@@ -1,0 +1,117 @@
+<div class="d-flex flex-column min-vh-100">
+    <div class="navbar-container">
+        <app-client-navbar></app-client-navbar>
+    </div>
+
+    <div class="main-container">
+        <div class="header-container">
+            <h5>Your Booking</h5>
+        </div>
+
+        <div class="search-bar-container">
+            <div class="input-group">
+                <input type="text" class="form-control form-control-sm search-input">
+                <button class="btn btn-sm search-btn" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="content-container">
+
+            <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                <li [ngbNavItem]="1">
+                    <button ngbNavLink>New</button>
+                    <ng-template ngbNavContent>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="table-heading-row">
+                                    <th scope="col" class="text-start start-padding">Booking No</th>
+                                    <th scope="col" class="text-center">Service Name</th>
+                                    <th scope="col" class="text-center">Package</th>
+                                    <th scope="col" class="text-center">Client Name</th>
+                                    <th scope="col" class="text-center">Scheduled date / time</th>
+                                    <th scope="col" class="text-end end-padding">More Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start start-padding">#acd451c</td>
+                                    <td class="text-center">Test Name 1</td>
+                                    <td class="text-center">Couple (30 min)</td>
+                                    <td class="text-center">Kalana Miniranga</td>
+                                    <td class="text-center">2023:12:15 14:30</td>
+                                    <td class="text-end end-padding"><button type="button"
+                                            class="btn btn-sm view-button">view</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex justify-content-between p-2">
+                            <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+                                (pageChange)="refreshCountries()">
+                            </ngb-pagination>
+
+                            <select class="form-select form-select-sm" style="width: auto" [(ngModel)]="pageSize"
+                                (ngModelChange)="refreshCountries()">
+                                <option [ngValue]="2">2 items per page</option>
+                                <option [ngValue]="4">4 items per page</option>
+                                <option [ngValue]="6">6 items per page</option>
+                            </select>
+                        </div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="2">
+                    <button ngbNavLink>History</button>
+                    <ng-template ngbNavContent>
+                        <!-- history table -->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="table-heading-row">
+                                    <th scope="col" class="text-start start-padding">Booking No</th>
+                                    <th scope="col" class="text-center">Service Name</th>
+                                    <th scope="col" class="text-center">Package</th>
+                                    <th scope="col" class="text-center">Client Name</th>
+                                    <th scope="col" class="text-center">Scheduled date / time</th>
+                                    <th scope="col" class="text-center">Status</th>
+                                    <th scope="col" class="text-end end-padding">More Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start start-padding">#acd451c</td>
+                                    <td class="text-center">Test Name 1</td>
+                                    <td class="text-center">Couple (30 min)</td>
+                                    <td class="text-center">Kalana Miniranga</td>
+                                    <td class="text-center">2023:12:15 14:30</td>
+                                    <td class="text-center"><span class="badge complete-badge">Complete</span></td>
+                                    <td class="text-end end-padding"><button type="button"
+                                            class="btn btn-sm view-button">view</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex justify-content-between p-2">
+                            <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+                                (pageChange)="refreshCountries()">
+                            </ngb-pagination>
+
+                            <select class="form-select form-select-sm" style="width: auto" [(ngModel)]="pageSize"
+                                (ngModelChange)="refreshCountries()">
+                                <option [ngValue]="2">2 items per page</option>
+                                <option [ngValue]="4">4 items per page</option>
+                                <option [ngValue]="6">6 items per page</option>
+                            </select>
+                        </div>
+                    </ng-template>
+                </li>
+            </ul>
+
+            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <app-inside-footer></app-inside-footer>
+    </div>
+</div>

@@ -5,11 +5,12 @@ import { NavbarComponent } from '../../../common/component/navbar/navbar.compone
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from '../common.service';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [FooterComponent, NavbarComponent, CommonModule, FormsModule],
+  imports: [FooterComponent, NavbarComponent, CommonModule, FormsModule, RouterModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
 })
