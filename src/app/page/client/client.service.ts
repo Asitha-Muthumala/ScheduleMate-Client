@@ -19,4 +19,16 @@ export class ClientService {
     return this.http.post<any>(`${BASE_URL}${ADD_BOOKING}`, payload);
   }
 
+  public getInBooking(clientId: number): Observable<any> {
+    return this.http.get<any>(`${BASE_URL}/booking/clients/incoming/${clientId}`);
+  }
+
+  public getCmBooking(clientId: number): Observable<any> {
+    return this.http.get<any>(`${BASE_URL}/booking/clients/completed/${clientId}`);
+  }
+
+  public getCanBooking(clientId: number): Observable<any> {
+    return this.http.get<any>(`${BASE_URL}/booking/clients/cancelled/${clientId}`);
+  }
+
 }

@@ -74,7 +74,7 @@ export class BusinessServiceComponent {
         }
       );
     } else {
-      console.error("svs")
+      console.error("businessId not found.")
     }
   }
 
